@@ -1,4 +1,4 @@
-from core.factory import get_llm
+from core.services.ai_service import AIService
 
 
 def main():
@@ -7,20 +7,20 @@ def main():
     print("Resume AI Agent")
     print("=" * 60)
 
-    llm = get_llm()
+    ai = AIService()
 
-    print(f"\nProvider : {llm.provider_name}")
-    print(f"Model    : {llm.model}")
+    print(f"\nProvider : {ai.llm.provider_name}")
+    print(f"Model    : {ai.llm.model}")
 
     while True:
 
         prompt = input("\nYou > ")
 
-        if prompt.lower() in {"exit", "quit"}:
+        if prompt.lower() in {"quit", "exit"}:
             print("\nGoodbye!")
             break
 
-        response = llm.ask(prompt)
+        response = ai.ask(prompt)
 
         print(f"\nAI > {response.content}")
 
