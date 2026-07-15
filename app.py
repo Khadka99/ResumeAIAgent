@@ -1,20 +1,28 @@
-from core.llm import LLM
+from core.factory import get_llm
 
 
 def main():
 
-    print("=" * 50)
+    print("=" * 60)
     print("Resume AI Agent")
-    print("=" * 50)
+    print("=" * 60)
 
-    llm = LLM()
+    llm = get_llm()
 
-    question = input("\nAsk something:\n\n> ")
+    print(f"\nProvider : {llm.provider_name}")
+    print(f"Model    : {llm.model}")
 
-    answer = llm.ask(question)
+    while True:
 
-    print("\n")
-    print(answer)
+        prompt = input("\nYou > ")
+
+        if prompt.lower() in {"exit", "quit"}:
+            print("\nGoodbye!")
+            break
+
+        response = llm.ask(prompt)
+
+        print(f"\nAI > {response.content}")
 
 
 if __name__ == "__main__":

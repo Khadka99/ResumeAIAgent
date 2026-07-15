@@ -4,7 +4,9 @@ Abstract base class for all LLM providers.
 
 from abc import ABC, abstractmethod
 
+from core.exceptions.llm_exceptions import LLMResponseError
 from core.models.llm_response import LLMResponse
+from core.utils.logger import logger
 
 
 class BaseLLM(ABC):
@@ -14,31 +16,38 @@ class BaseLLM(ABC):
     """
 
     def __init__(self, model: str) -> None:
-        """
-        Initialize the provider.
-
-        Args:
-            model: Name of the language model.
-        """
         self.model = model
 
     @property
     @abstractmethod
     def provider_name(self) -> str:
-        """
-        Return the provider name.
-        """
+        """Return the provider name."""
         pass
 
     @abstractmethod
     def ask(self, prompt: str) -> LLMResponse:
-        """
-        Send a prompt to the LLM.
-
-        Args:
-            prompt: User prompt.
-
-        Returns:
-            Standardized LLMResponse.
-        """
+        """Send a prompt to the provider."""
         pass
+
+    # ---------------------------------------------------------
+    # Shared helper methods
+    # ---------------------------------------------------------
+
+    def validate_prompt(self, prompt: str) -> None:
+        """
+        Validate the user prompt.
+        """
+
+        if not prompt.strip():
+            raise LLMResponseError("Prompt cannot be empty.")
+
+    def log_request(self) -> None:
+        """
+        Log outgoing LLM request.
+        """
+
+        logger.info(
+            "Sending request to %s (%s)",
+            self.provider_name,
+            self.model,
+        )
