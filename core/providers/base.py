@@ -25,8 +25,11 @@ class BaseLLM(ABC):
         pass
 
     @abstractmethod
-    def ask(self, prompt: str) -> LLMResponse:
-        """Send a prompt to the provider."""
+    def ask(
+            self,
+            prompt: str,
+            system_prompt: str | None = None,
+    ) -> LLMResponse:
         pass
 
     # ---------------------------------------------------------

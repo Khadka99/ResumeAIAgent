@@ -33,9 +33,12 @@ class AIService:
             self.llm.model,
         )
 
-    def ask(self, prompt: str) -> LLMResponse:
-        """
-        Send a prompt to the configured provider.
-        """
-
-        return self.llm.ask(prompt)
+    def ask(
+            self,
+            prompt: str,
+            system_prompt: str | None = None,
+    ) -> LLMResponse:
+        return self.llm.ask(
+            prompt=prompt,
+            system_prompt=system_prompt,
+        )

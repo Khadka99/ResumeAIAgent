@@ -32,7 +32,11 @@ class OpenAILLM(BaseLLM):
         return "OpenAI"
 
     @retry_api
-    def ask(self, prompt: str) -> LLMResponse:
+    def ask(
+            self,
+            prompt: str,
+            system_prompt: str | None = None,
+    ) -> LLMResponse:
         """
         Send a prompt to OpenAI.
         """
