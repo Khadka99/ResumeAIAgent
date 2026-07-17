@@ -1,16 +1,20 @@
 """
-Structured representation of a parsed job description.
+Pydantic model representing a parsed job description.
 """
 
-from dataclasses import dataclass, field
+from pydantic import BaseModel, Field, ConfigDict
 
 
-@dataclass(slots=True)
-class JobRequirements:
+class JobRequirements(BaseModel):
     """
-    Represents the important information extracted
-    from a job description.
+    Structured representation of a parsed job description.
     """
+
+    model_config = ConfigDict(
+        extra="ignore",
+        str_strip_whitespace=True,
+        validate_assignment=True,
+    )
 
     title: str = ""
 
@@ -24,14 +28,14 @@ class JobRequirements:
 
     education: str = ""
 
-    required_skills: list[str] = field(default_factory=list)
+    required_skills: list[str] = Field(default_factory=list)
 
-    preferred_skills: list[str] = field(default_factory=list)
+    preferred_skills: list[str] = Field(default_factory=list)
 
-    responsibilities: list[str] = field(default_factory=list)
+    responsibilities: list[str] = Field(default_factory=list)
 
-    qualifications: list[str] = field(default_factory=list)
+    qualifications: list[str] = Field(default_factory=list)
 
-    keywords: list[str] = field(default_factory=list)
+    keywords: list[str] = Field(default_factory=list)
 
     summary: str = ""

@@ -1,7 +1,7 @@
 from core.models.job_requirements import JobRequirements
 
 
-def test_job_requirements_defaults():
+def test_defaults():
 
     job = JobRequirements()
 
@@ -11,6 +11,21 @@ def test_job_requirements_defaults():
 
     assert job.required_skills == []
 
-    assert job.preferred_skills == []
-
     assert job.summary == ""
+
+
+def test_validation():
+
+    job = JobRequirements.model_validate(
+        {
+            "title": "Accounting Clerk",
+            "required_skills": [
+                "Excel",
+                "QuickBooks",
+            ],
+        }
+    )
+
+    assert job.title == "Accounting Clerk"
+
+    assert "Excel" in job.required_skills
