@@ -1,7 +1,7 @@
 import pytest
 
-from core import OpenAILLM
-from core import LLMResponse
+from core.providers.openai_provider import OpenAILLM
+from core.models.llm_response import LLMResponse
 
 
 def test_provider_name():

@@ -1,5 +1,5 @@
-from core import PromptBuilder
-from core import JobRequirements
+from core.builders.prompt_builder import PromptBuilder
+from core.models.job_requirements import JobRequirements
 
 
 def test_build_resume_prompt():

@@ -5,7 +5,8 @@ Abstract base class for all LLM providers.
 from abc import ABC, abstractmethod
 
 from core.exceptions.llm_exceptions import LLMResponseError
-from core.providers.ollama_provider import LLMResponse
+#from core.providers.ollama_provider import LLMResponse
+from core.models.llm_response import LLMResponse
 from core.utils.logger import logger
 
 

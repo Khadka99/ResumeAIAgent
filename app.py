@@ -1,6 +1,6 @@
 from agents.job_parser_agent import JobParserAgent
-from core import AIService
-from core import read_text_file
+from core.services.ai_service import AIService
+from core.utils.file_reader import read_text_file
 
 
 def main():

@@ -1,8 +1,8 @@
 from agents.resume_agent import ResumeAgent
-from core import JobRequirements
-from core import LLMResponse
-from core import BaseLLM
-from core import AIService
+from core.models.job_requirements import JobRequirements
+from core.models.llm_response import LLMResponse
+from core.providers.base import BaseLLM
+from core.services.ai_service import AIService
 
 
 class DummyLLM(BaseLLM):

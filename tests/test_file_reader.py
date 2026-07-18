@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from core import read_text_file
+from core.utils.file_reader import read_text_file
 
 
 def test_read_text_file(tmp_path: Path):
