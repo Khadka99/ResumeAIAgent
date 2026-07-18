@@ -4,7 +4,7 @@ Prompt Builder.
 Responsible for creating prompts used by AI agents.
 """
 
-from core import JobRequirements
+from core.models.job_requirements import JobRequirements
 
 
 class PromptBuilder:

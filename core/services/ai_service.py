@@ -5,10 +5,10 @@ This service is responsible for communicating with the
 configured LLM provider.
 """
 
-from core import get_llm
-from core import LLMResponse
-from core import BaseLLM
-from core import logger
+from core.factory import get_llm
+from core.models.llm_response import LLMResponse
+from core.providers.base import BaseLLM
+from core.utils.logger import logger
 
 
 class AIService:

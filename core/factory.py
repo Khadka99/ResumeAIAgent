@@ -2,12 +2,12 @@
 Factory for creating LLM providers.
 """
 
-from core import settings
-from core import UnsupportedProviderError
-from core import BaseLLM
-from core import OllamaLLM
-from core import OpenAILLM
-from core import logger
+from core.config import settings
+from core.exceptions.llm_exceptions import UnsupportedProviderError
+from core.providers.base import BaseLLM
+from core.providers.ollama_provider import OllamaLLM
+from core.providers.openai_provider import OpenAILLM
+from core.utils.logger import logger
 
 
 def get_llm() -> BaseLLM:

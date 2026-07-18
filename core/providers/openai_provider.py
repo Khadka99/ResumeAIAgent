@@ -4,15 +4,15 @@ OpenAI implementation of the BaseLLM interface.
 
 from openai import OpenAI
 
-from core import settings
-from core import (
+from core.config import settings
+from core.exceptions.llm_exceptions import (
     LLMProviderError,
     LLMResponseError,
 )
-from core import LLMResponse
-from core import BaseLLM
-from core import logger
-from core import retry_api
+from core.models.llm_response import LLMResponse
+from core.providers.base import BaseLLM
+from core.utils.logger import logger
+from core.utils.retry import retry_api
 
 
 class OpenAILLM(BaseLLM):
