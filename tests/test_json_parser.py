@@ -1,4 +1,4 @@
-from core.utils.json_parser import parse_json
+from core import parse_json
 
 
 def test_parse_plain_json():

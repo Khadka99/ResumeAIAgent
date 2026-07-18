@@ -1,6 +1,6 @@
 """Shared test fixtures for agent tests."""
-from core.models.llm_response import LLMResponse
-from core.providers.base import BaseLLM
+from core import LLMResponse
+from core import BaseLLM
 
 
 class DummyLLM(BaseLLM):

@@ -2,10 +2,10 @@
 Agent responsible for parsing job descriptions.
 """
 
-from core.models.job_requirements import JobRequirements
-from core.prompts import JOB_PARSER_SYSTEM_PROMPT
-from core.services.ai_service import AIService
-from core.utils.json_parser import parse_json
+from core import JobRequirements
+from core import JOB_PARSER_SYSTEM_PROMPT
+from core import AIService
+from core import parse_json
 
 
 class JobParserAgent:

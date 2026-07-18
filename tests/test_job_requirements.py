@@ -1,4 +1,4 @@
-from core.models.job_requirements import JobRequirements
+from core import JobRequirements
 
 
 def test_defaults():

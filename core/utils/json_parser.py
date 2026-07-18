@@ -5,7 +5,7 @@ Utilities for parsing JSON returned by LLMs.
 import json
 import re
 
-from core.exceptions.llm_exceptions import LLMResponseError
+from core import LLMResponseError
 
 
 def parse_json(text: str) -> dict:

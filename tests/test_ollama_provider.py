@@ -1,5 +1,5 @@
-from core.models.llm_response import LLMResponse
-from core.providers.ollama_provider import OllamaLLM
+from core import LLMResponse
+from core import OllamaLLM
 
 
 def test_provider_name():

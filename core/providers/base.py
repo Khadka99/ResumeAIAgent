@@ -4,9 +4,9 @@ Abstract base class for all LLM providers.
 
 from abc import ABC, abstractmethod
 
-from core.exceptions.llm_exceptions import LLMResponseError
-from core.models.llm_response import LLMResponse
-from core.utils.logger import logger
+from core import LLMResponseError
+from core import LLMResponse
+from core import logger
 
 
 class BaseLLM(ABC):

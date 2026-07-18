@@ -4,14 +4,14 @@ Ollama implementation of the BaseLLM interface.
 
 from ollama import Client
 
-from core.config import settings
-from core.exceptions.llm_exceptions import (
+from core import settings
+from core import (
     LLMProviderError,
     LLMResponseError,
 )
-from core.models.llm_response import LLMResponse
-from core.providers.base import BaseLLM
-from core.utils.logger import logger
+from core import LLMResponse
+from core import BaseLLM
+from core import logger
 
 
 class OllamaLLM(BaseLLM):

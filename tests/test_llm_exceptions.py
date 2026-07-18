@@ -1,6 +1,6 @@
 import pytest
 
-from core.exceptions.llm_exceptions import (
+from core import (
     LLMError,
     LLMConfigurationError,
     LLMProviderError,

@@ -1,4 +1,4 @@
-from core.config import settings
+from core import settings
 
 print("Provider :", settings.LLM_PROVIDER)
 print("OpenAI   :", settings.OPENAI_MODEL)
